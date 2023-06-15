@@ -16,7 +16,7 @@ planetMain.src = planets[currentPlanet];
 
 function slideForward() {
   if (currentPlanet === 2) {
-    currentPlanet = 0;
+    return;
   }
   ++currentPlanet;
   planetMain.src = planets[currentPlanet];
@@ -25,57 +25,34 @@ function slideForward() {
 
 function slideBackward() {
   if (currentPlanet === 0) {
-    currentPlanet = 2;
+    return;
   }
   --currentPlanet;
   planetMain.src = planets[currentPlanet];
   console.log(currentPlanet);
 }
 
-function highlightSelector() {
-  if (currentPlanet === 0) {
-    selector0.style.border = "solid 1px black";
-    selector1.style.border = "none";
-    selector2.style.border = "none";
-  } else if (currentPlanet === 1) {
-    selector0.style.border = "none";
-    selector1.style.border = "solid 1px black";
-    selector2.style.border = "none";
-  } else if (currentPlanet === 2) {
-    selector0.style.border = "none";
-    selector1.style.border = "none";
-    selector2.style.border = "solid 1px black";
-  }
-}
-
-
-arrowLeft.addEventListener("click", () => {
-  slideBackward();
-  highlightSelector();
-});
-
-arrowRight.addEventListener("click", () => {
-  slideForward();
-  highlightSelector();
-});
-
-selector0.addEventListener("click", () => {
+function selectPlanet0() {
   currentPlanet = 0;
   planetMain.src = planets[currentPlanet];
   console.log(currentPlanet);
-  highlightSelector();
-});
+}
 
-selector1.addEventListener("click", () => {
+function selectPlanet1() {
   currentPlanet = 1;
   planetMain.src = planets[currentPlanet];
   console.log(currentPlanet);
-  highlightSelector();
-});
+}
 
-selector2.addEventListener("click", () => {
+function selectPlanet2() {
   currentPlanet = 2;
   planetMain.src = planets[currentPlanet];
   console.log(currentPlanet);
-  highlightSelector();
-});
+}
+
+arrowLeft.addEventListener("click", () => { slideBackward() });
+arrowRight.addEventListener("click", () => { slideForward() });
+
+selector0.addEventListener("click", () => { selectPlanet0() });
+selector1.addEventListener("click", () => { selectPlanet1() });
+selector2.addEventListener("click", () => { selectPlanet2() });
