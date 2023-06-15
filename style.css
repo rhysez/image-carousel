@@ -121,3 +121,9 @@ body {
 .opaque {
     opacity: 1;
 }
+
+p {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+}
