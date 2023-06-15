@@ -63,6 +63,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 4rem;
+    text-align: center;
 }
 
 #imageContainer {
