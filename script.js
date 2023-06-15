@@ -32,27 +32,28 @@ function slideBackward() {
   console.log(currentPlanet);
 }
 
-function selectPlanet0() {
-  currentPlanet = 0;
+function selectPlanet(selectedPlanet) {
+  currentPlanet = selectedPlanet;
   planetMain.src = planets[currentPlanet];
   console.log(currentPlanet);
 }
 
-function selectPlanet1() {
-  currentPlanet = 1;
+function changeImage() {
   planetMain.src = planets[currentPlanet];
-  console.log(currentPlanet);
+  currentPlanet = currentPlanet + 1;
+  if (currentPlanet === planets.length){
+    currentPlanet = 0;
+  }
 }
 
-function selectPlanet2() {
-  currentPlanet = 2;
-  planetMain.src = planets[currentPlanet];
-  console.log(currentPlanet);
+window.onload = function(){
+  setInterval(function(){
+    changeImage();}, 2000);
 }
 
 arrowLeft.addEventListener("click", () => { slideBackward() });
 arrowRight.addEventListener("click", () => { slideForward() });
 
-selector0.addEventListener("click", () => { selectPlanet0() });
-selector1.addEventListener("click", () => { selectPlanet1() });
-selector2.addEventListener("click", () => { selectPlanet2() });
+selector0.addEventListener("click", () => { selectPlanet(0) });
+selector1.addEventListener("click", () => { selectPlanet(1) });
+selector2.addEventListener("click", () => { selectPlanet(2) });
