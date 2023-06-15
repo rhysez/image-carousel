@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Pacifico&family=Sriracha&display=swap');
 
 :root {
-    --header: rgb(37, 37, 37);
+    --header: rgb(37, 37, 37, 0.65);
     --headerButtons: white;
     --logo: white;
     --bodyColor: rgb(43, 43, 43);
@@ -26,8 +26,10 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--bodyColor);
     font-family: 'Lexend Deca', sans-serif;
+    background: url(./images/galaxy.jpg);
+    background-position: center;
+    background-size: cover;
 }
 
 #header {
@@ -37,10 +39,11 @@ body {
     padding-left: 4rem;
     padding-right: 4rem;
     background-color: var(--header);
-    justify-content: space-between;
+    justify-content: center;
 }
 
-#logo {
+#logo,
+.headerText {
     font-size: 2.5rem;
     color: var(--logo);
 }
@@ -73,10 +76,10 @@ body {
 
 .planet {
     max-width: 35rem;
-    border-radius: 0.75rem;
-    border: 1px solid white;
-    transition: all 1s ease;
-    animation: fade 1s;
+    border-radius: 50%;
+    border: 3px solid white;
+    transition: all 3s ease;
+    animation: fade 3s;
 }
 
 #arrows {
@@ -89,7 +92,7 @@ body {
     width: 4rem;
     height: 4rem;
     cursor: pointer;
-    filter: invert(99%) sepia(3%) saturate(146%) hue-rotate(248deg) brightness(118%) contrast(92%);
+    filter: invert(99%) sepia(2%) saturate(2475%) hue-rotate(194deg) brightness(114%) contrast(88%);
     transition: all .2s ease-in-out;
 }
 
@@ -102,7 +105,7 @@ body {
     width: 4rem;
     height: 4rem;
     cursor: pointer;
-    filter: invert(99%) sepia(3%) saturate(146%) hue-rotate(248deg) brightness(118%) contrast(92%);
+    filter: invert(99%) sepia(2%) saturate(2475%) hue-rotate(194deg) brightness(114%) contrast(88%);
     transition: all .2s ease-in-out;
     border-radius: 50%;
 }
