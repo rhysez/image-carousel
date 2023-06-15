@@ -9,9 +9,14 @@
     --selector: rgb(245, 245, 245);
 };
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
 }
 
 html {
@@ -63,15 +68,15 @@ body {
     justify-content: center;
     gap: 2rem;
     width: 70%;
-    margin-top: 20rem;
+    margin-top: 10rem;
 }
 
 .planet {
     max-width: 35rem;
     border-radius: 0.75rem;
     border: 1px solid white;
-    transition: all 1s ease-in-out;
-    animation: fadeIn 1s;
+    transition: all 1s ease;
+    animation: fade 1s;
 }
 
 #arrows {
